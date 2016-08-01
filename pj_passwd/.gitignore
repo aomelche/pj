@@ -1,6 +1,7 @@
 /bin
 /build
 /obj
+/gen
 *.cbp
 *.depend
 *.layout

@@ -8,7 +8,7 @@ set(PJPASSWD_VERSION_MAJOR 0)
 set(PJPASSWD_VERSION_MINOR 1)
 
 configure_file("${PROJECT_SOURCE_DIR}/src/pj_config.h.in"
-	"${PROJECT_SOURCE_DIR}/src/_pj_config.h")
+	"${PROJECT_SOURCE_DIR}/gen/pj_config_.h")
 
 find_path(PJUTILS_INCLUDE_DIR pj_utils/delete.hpp
 	PATHS
@@ -20,7 +20,7 @@ if(${PJUTILS_INCLUDE_DIR} STREQUAL "PJUTILS_INCLUDE_DIR-NOTFOUND")
 	message(FATAL_ERROR "Cannot find pjutils library (set PJUTILS_INCLUDE_DIR)")
 endif()
 
-include_directories(${PJUTILS_INCLUDE_DIR})
+include_directories(${PJUTILS_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/gen)
 
 target_link_libraries(pjpasswd crypt pthread)
 

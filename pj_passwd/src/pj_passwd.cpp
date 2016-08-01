@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <algorithm>
-#include "_pj_config.h"
+#include "pj_config_.h"
 
 using namespace std;
 using namespace pj;
